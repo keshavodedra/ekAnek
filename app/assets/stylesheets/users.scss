@@ -1,3 +1,24 @@
 // Place all the styles related to the user controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.m-l-20{
+  margin-left: 20px;
+}
+
+.m-b-50{
+  margin-bottom: 50px;
+}
+
+.btn{
+	background-color:rgb(59, 59, 194);
+	color:white;
+	font-weight:bold;
+	border:none;
+	padding:0px 10px;
+	line-height:35px;
+  cursor: pointer;
+	&:hover{
+		opacity: .8;
+	}
+}

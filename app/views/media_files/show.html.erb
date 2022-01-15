@@ -1,24 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%= render "shared/nav" %>
 
-<h1>Media File</h1>
+<h2>Media File</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>File</th>
-    </tr>
-  </thead>
+<div class="box-media">
+      <div class="detail_media">
+        <ul>
+          <li><strong>Title </strong>
+              <span>#<%= @media_file.title %></span>
+            </li>
+          
+            <li><strong>Description </strong>
+              <span> <%= @media_file.description%></span>
+            </li>
 
-  <tbody>
-      <tr>
-        <td> <%= @media_file.title %> </td>
-        <td> <%= @media_file.description %> </td>
-        <td> <%= link_to 'Download File', rails_blob_path(@media_file.file, disposition: :attachment) %> </td>
-      </tr>
-  </tbody>
-</table>
+            <li><strong>File </strong>
+              <span> <%= link_to 'Download File', rails_blob_path(@media_file.file, disposition: :attachment)%></span>
+            </li>
 
-<%= link_to 'Edit', edit_media_file_path(@media_file) %> |
-<%= link_to 'My Media File List', media_files_path %>
+            <li><strong>File Type </strong>
+              <span> <%= @media_file.file.content_type%></span>
+            </li>
+
+          </u>
+      </div>
+</div>
+
+<%= link_to 'Edit', edit_media_file_path(@media_file), :class => "link-btn" %> |
+<%= link_to 'My Media File List', media_files_path, :class => "link-btn" %>

@@ -1,7 +1,14 @@
-<br>
-<br>
-<%= current_user.email %>
-<br>
-<%= current_user.full_name %>
-<br>
-<%= link_to 'Logout', destroy_user_session_path %>
+<div class="m-b-50">
+  <%= image_tag("user.jpeg", width: "50px") %>
+  <span class="m-l-20">
+    <%= current_user.full_name %>
+  <span>
+
+  <span class="m-l-20">
+    <%= current_user.email %>
+  <span>
+
+  <span class="m-l-20">
+    <%= link_to 'Logout', destroy_user_session_path %>
+  <span>
+</div>

@@ -1,3 +1,44 @@
 // Place all the styles related to the media_files controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.main-table-body tr .select {
+  padding-left: 10px !important;
+}
+
+.main-table-body tr td {
+  padding-left: 15px !important;
+}
+
+.main-table-heading th {
+  border-bottom: 5px solid #edf0f5 !important;
+  padding: 10px !important;
+}
+
+.panel-table{
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.16)!important;
+	overflow: hidden;
+}
+
+.link-btn{
+  padding: 5px;
+}
+
+
+
+.box-media {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 1px;
+  .detail_media {
+      ul {
+          li {
+              color: #666;
+              strong {
+                  margin-top: 10px;
+                  display: block;
+              }                            
+          }
+      }
+  }
+}

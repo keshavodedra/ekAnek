@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="white edit-form">
+    <div class="field">
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_field :description %>
+    </div>
+
+    <div class="field">
+      <%= f.label :file %><br />
+      <%= f.file_field :file %>
+    </div>
+    <div><br> </div>
+    <div class="actions">
+      <%= f.submit "Save", :class=> 'btn' %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-
-  <div class="field">
-    <%= f.label :file %><br />
-    <%= f.file_field :file %>
-  </div>
-  <div><br> </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

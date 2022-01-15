@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     root :to => 'devise/sessions#new'
   end
   get 'user', to: 'users#index'
+  get '*path', to: redirect("/users/sign_up")
 end

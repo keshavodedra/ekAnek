@@ -1,29 +1,41 @@
-<h1>Media Files</h1>
+<%= render "shared/nav" %>
 
+<% if @media_files.size > 0 %>
+  <h2>Media Files</h2>
+
+<div class="panel panel-table">
 <table>
-  <thead>
+  <thead class="main-table-heading">
     <tr>
       <th>Title</th>
       <th>Description</th>
       <th>File</th>
+      <th>File Type</th>
+      <th>Action</th>
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class="main-table-body">
     <% @media_files.each do |media_file| %>
       <tr>
         <td> <%= media_file.title %> </td>
         <td> <%= media_file.description %> </td>
         <td> <%= link_to 'Download File', rails_blob_path(media_file.file, disposition: :attachment) %> </td>
-
-        <td><%= link_to 'Show', media_file %></td>
-        <td><%= link_to 'Edit', edit_media_file_path(media_file) %></td>
-        <td><%= link_to 'Destroy', media_file, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td> <%= media_file.file.content_type %> </td>
+        <td>
+          <%= link_to 'Show', media_file %>
+          <%= link_to 'Edit', edit_media_file_path(media_file) %>
+          <%= link_to 'Remove', media_file, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
+<%else%>
+  <h2>Add Files</h2>
+<%end%>
 
 <%= link_to 'New Media File', new_media_file_path %>
