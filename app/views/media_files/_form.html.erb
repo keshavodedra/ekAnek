@@ -26,6 +26,13 @@
       <%= f.label :file %><br />
       <%= f.file_field :file %>
     </div>
+
+
+    <div class="field">
+      <%= f.label :is_shared ,"Do you want to share this file?" %><br />
+      <%= f.check_box :is_shared %>
+    </div>
+
     <div><br> </div>
     <div class="actions">
       <%= f.submit "Save", :class=> 'btn' %>

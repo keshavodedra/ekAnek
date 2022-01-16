@@ -1,9 +1,14 @@
 class MediaFilesController < ApplicationController
   before_action :set_media_file, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: %i[index]
 
   # GET /media_files or /media_files.json
   def index
-    @media_files = current_user.media_files.latest
+    @media_files = if current_user
+      current_user.media_files.latest
+    else        
+      MediaFile.shared
+    end
   end
 
   # GET /media_files/1 or /media_files/1.json
@@ -65,6 +70,6 @@ class MediaFilesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def media_file_params
-      params.require(:media_file).permit(:title, :description, :file)
+      params.require(:media_file).permit(:title, :description, :file, :is_shared)
     end
 end

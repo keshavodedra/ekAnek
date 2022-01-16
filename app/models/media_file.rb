@@ -11,5 +11,6 @@ class MediaFile < ApplicationRecord
   }
 
   scope :latest, -> { order(:created_at => :desc)}
+  scope :shared, -> { where(is_shared: true)}
 
 end
