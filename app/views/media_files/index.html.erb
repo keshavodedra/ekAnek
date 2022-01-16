@@ -49,12 +49,12 @@
   </div>
   <br>
   <% if current_user %>
-    <h2>Add Files</h2>
+    <h2>Add File</h2>
     <%= link_to 'New Media File', new_media_file_path %>
   <%end%>
 <%else%>
   <% if current_user %>
-    <h2>Add Files</h2>
+    <h2>Add File</h2>
     <%= link_to 'New Media File', new_media_file_path %>
   <%else%>
     <h2>No Public Files</h2>

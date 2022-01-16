@@ -1,23 +1,24 @@
 <div class="m-b-50">
-  <%= image_tag("user.jpeg", width: "50px") %>
-  <span class="m-l-20">
-    <%= current_user.try(:full_name) %>
-  <span>
-
-  <span class="m-l-20">
-    <%= current_user.try(:email) %>
-  <span>
-
   <%if current_user%>
-    <span class="m-l-20">
-      <%= link_to 'Logout', destroy_user_session_path %>
-    <span>
+      <%= image_tag("user.jpeg", width: "50px") %>
+      <span class="m-l-20">
+        <%= current_user.try(:full_name) %>
+      <span>
+
+      <span class="m-l-20">
+        <%= current_user.try(:email) %>
+      <span>
+
+      <span class="m-l-20">
+        <%= link_to 'Logout', destroy_user_session_path %>
+      <span>
   <%else%>
-    <span class="m-l-20">
-      <%= link_to 'Login', user_session_path %>
-    <span>
-    <span class="m-l-20">
-      <%= link_to 'Register', new_user_registration_path %>
-    <span>
+      <%= image_tag("user_unauth.png", width: "50px") %>
+      <span class="m-l-20">
+        <%= link_to 'Login', user_session_path %>
+      <span>
+      <span class="m-l-20">
+        <%= link_to 'Register', new_user_registration_path %>
+      <span>
   <%end%>
 </div>
