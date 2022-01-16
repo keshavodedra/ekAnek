@@ -16,6 +16,7 @@
           <th>Description</th>
           <th>File</th>
           <th>File Type</th>
+          <th>File Size</th>
           <% if current_user %>
             <th>Is Shared?</th>
             <th>Action</th>
@@ -32,6 +33,7 @@
             <td> <%= media_file.description %> </td>
             <td> <%= link_to 'Download File', rails_blob_path(media_file.file, disposition: :attachment) %> </td>
             <td> <%= media_file.file.content_type %> </td>
+            <td> <%= media_file.file_size %> </td>
             <% if current_user %>
               <td> <%= media_file.is_shared ? "Yes" : "No" %> </td>
               <td>
